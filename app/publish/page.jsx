@@ -11,7 +11,7 @@ const Page = () => {
   const onSubmit = async (data) => {
     try {
       const id = localStorage.getItem("id");
-      const backend_uri = process.env.BACKEND_URI || "http://localhost:3001";
+      const backend_uri = process.env.BACKEND_URI || "https://backend-event-management-1.onrender.com/";
       const formData = new FormData();
       formData.append("eventName", data.eventName);
       formData.append("description", data.description);

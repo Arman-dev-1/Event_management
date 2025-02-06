@@ -7,7 +7,7 @@ export default function Home() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const backend_uri = process.env.BACKEND_URI || "http://localhost:3001";
+    const backend_uri = process.env.BACKEND_URI || "https://backend-event-management-1.onrender.com/";
 
     fetch(`${backend_uri}/sendevents`)
       .then((res) => {

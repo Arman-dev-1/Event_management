@@ -10,7 +10,7 @@ export default function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const backend_uri = process.env.BACKEND_URI || "http://localhost:3001";
+      const backend_uri = process.env.BACKEND_URI || "https://backend-event-management-1.onrender.com";
       const response = await fetch(`${backend_uri}/login`, {
         method: 'POST',
         headers: {
