@@ -20,7 +20,7 @@ export default function Profile() {
     useEffect(() => {
         const fetchData = async () => {
             const id = localStorage.getItem("id");
-            const backend_uri = process.env.BACKEND_URI || "https://backend-event-management-1.onrender.com";
+            const backend_uri = process.env.BACKEND_URI || "https://backend-event-management-2.onrender.com";
 
             try {
                 const response = await fetch(`${backend_uri}/eventsbyuser`, {

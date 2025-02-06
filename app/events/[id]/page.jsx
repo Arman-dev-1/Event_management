@@ -11,7 +11,7 @@ const page = () => {
     const [events, setEvents] = useState([]);
 
     const fetchData = async () => {
-        const backend_uri = process.env.BACKEND_URI || "https://backend-event-management-1.onrender.com";
+        const backend_uri = process.env.BACKEND_URI || "https://backend-event-management-2.onrender.com";
         const response = await fetch(`${backend_uri}/events`, {
             method: 'POST',
             headers: {
