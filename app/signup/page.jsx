@@ -26,9 +26,8 @@ const Page = () => {
 
       const {id , username} = await response.json();
       
-      // Handle successful submission (e.g., show a success message)
-      console.log('Form submitted successfully:', data);
-      if(response.status === 200) {
+
+      if(response.ok) {
         localStorage.setItem("Is_Logged", true);
         localStorage.setItem("username", username);
         localStorage.setItem("id",id);
