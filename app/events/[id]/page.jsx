@@ -50,6 +50,12 @@ const page = () => {
         fetchData();
     };
 
+    const handlelogin = () => {
+        window.location.href = "/login";
+    };
+
+    const Is_Logged = localStorage.getItem("Is_Logged");
+
     return (
         <div className='h-screen w-full flex flex-col items-center'>
             <div className='md:w-[80%] w-[90%] h-full flex flex-col items-center'>
@@ -58,7 +64,11 @@ const page = () => {
                     <h1 className="text-6xl font-bold">{events.eventName}</h1>
                     <p className='text-xl text-gray-600'>{events.description}</p>
                     <p className='text-xl text-gray-600'>{events.date}</p>
-                    <button className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 w-48 shadow-md' onClick={handleadd}>Attend This Event</button>
+                    {Is_Logged ? (
+                        <button className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 w-48 shadow-md' onClick={handleadd}>Attend This Event</button>
+                    ) : (
+                        <button className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 w-48 shadow-md' onClick={handlelogin}>Attend This Event</button>
+                    )}
                     <ul className='flex flex-col gap-2'>
                         {events.attendees?.length > 0 ? (
                             events.attendees.map((attendee) => (
